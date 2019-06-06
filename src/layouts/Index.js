@@ -52,6 +52,9 @@ const LayoutGallery = styled.div`
                     text-decoration: none;
                     color: #333333;
                 }
+                &.is-active {
+                    color: #ff0000;
+                }
             }
         }
     }
@@ -62,8 +65,8 @@ export default function GalleryLayout({ children, location }) {
         <LayoutGallery>
             <GlobalStyles />
             <ul className="gallery-nav">
-                <li><Link to={'/'} className="gallery-nav-link">Home</Link></li>
-                <li><Link to={'/Page1'} className="gallery-nav-link">Page 1</Link></li>
+                <li><Link to={'/'} className="gallery-nav-link" activeClassName="is-active">Home</Link></li>
+                <li><Link to={'/Page1'} className="gallery-nav-link" activeClassName="is-active">Page 1</Link></li>
             </ul>
             <Transitions location={location}>
                 { children }
