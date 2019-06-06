@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { createGlobalStyle } from 'styled-components'
+import Transitions from '../components/Transitions'
 
 const GlobalStyles = createGlobalStyle`
     *, *::before, *::after {
@@ -56,7 +57,7 @@ const LayoutGallery = styled.div`
     }
 `
 
-export default function GalleryLayout({ children }) {
+export default function GalleryLayout({ children, location }) {
     return (
         <LayoutGallery>
             <GlobalStyles />
@@ -64,7 +65,9 @@ export default function GalleryLayout({ children }) {
                 <li><Link to={'/'} className="gallery-nav-link">Home</Link></li>
                 <li><Link to={'/Page1'} className="gallery-nav-link">Page 1</Link></li>
             </ul>
-            { children }
+            <Transitions location={location}>
+                { children }
+            </Transitions>
         </LayoutGallery>
     )
 }
