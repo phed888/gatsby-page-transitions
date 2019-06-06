@@ -5,5 +5,19 @@
  */
 
 module.exports = {
-  plugins: [`gatsby-plugin-styled-components`, 'gatsby-plugin-layout'],
+  siteMetadata: {
+    title: 'Gatsby Default Starter',
+  },
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-plugin-styled-components`, 
+    'gatsby-plugin-layout'
+  ],
 }
