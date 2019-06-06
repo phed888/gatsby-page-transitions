@@ -1,6 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyles = createGlobalStyle`
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #333333;
+        background-color: #eeeeee;
+        height: 100%;
+    }
+    body {
+        background-color: #ffffff;
+        height: 100%;
+        margin: 0 auto;
+        width: 970px;
+        font-size: 1.4rem;
+        #___gatsby, #___gatsby > div {
+        height: 100%;
+        }
+    }
+`
 
 const LayoutGallery = styled.div`
     /* display: flex;
@@ -33,6 +59,7 @@ const LayoutGallery = styled.div`
 export default function GalleryLayout({ children }) {
     return (
         <LayoutGallery>
+            <GlobalStyles />
             <ul className="gallery-nav">
                 <li><Link to={'/'} className="gallery-nav-link">Home</Link></li>
                 <li><Link to={'/Page1'} className="gallery-nav-link">Page 1</Link></li>
