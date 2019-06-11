@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import { createGlobalStyle } from 'styled-components'
 import Transitions from '../components/Transitions'
 
+
 const GlobalStyles = createGlobalStyle`
     *, *::before, *::after {
         box-sizing: border-box;
@@ -58,6 +59,9 @@ const LayoutGallery = styled.div`
             }
         }
     }
+    .page-container {
+        overflow: hidden;
+    }
 `
 
 export default function GalleryLayout({ children, location }) {
@@ -68,9 +72,11 @@ export default function GalleryLayout({ children, location }) {
                 <li><Link to={'/'} className="gallery-nav-link" activeClassName="is-active">Home</Link></li>
                 <li><Link to={'/Page1'} className="gallery-nav-link" activeClassName="is-active">Page 1</Link></li>
             </ul>
-            <Transitions location={location}>
-                { children }
-            </Transitions>
+            <div className="page-container">
+                <Transitions location={location}>
+                    { children }
+                </Transitions>
+            </div>
         </LayoutGallery>
     )
 }

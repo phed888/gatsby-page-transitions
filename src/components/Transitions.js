@@ -7,7 +7,7 @@ const getTransitionStyles = {
     entering: {
         position: 'absolute',
         opacity: 0,
-        transform: 'translateX(-20%)',
+        transform: 'translateX(-100%)',
     },
     entered: {
         transition: `all ${timeOut}ms ease-in-out`,
@@ -17,7 +17,7 @@ const getTransitionStyles = {
     exiting: {
         transition: `all ${timeOut}ms ease-in-out`,
         opacity: 0,
-        transform: 'translateX(20%)',
+        transform: 'translateX(-100%)',
     }
 
 }
